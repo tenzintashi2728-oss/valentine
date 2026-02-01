@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Khushi ❤️</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 22px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+      animation: pop 1s ease;
+      max-width: 340px;
+    }
+
+    @keyframes pop {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    img {
+      width: 100%;
+      border-radius: 16px;
+      margin-bottom: 12px;
+    }
+
+    .bengali {
+      font-size: 15px;
+      color: #ff4d6d;
+      font-style: italic;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      color: #ff4d6d;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #555;
+      font-size: 16px;
+      margin-bottom: 18px;
+      line-height: 1.5;
+    }
+
+    h2 {
+      color: #ff4d6d;
+      margin-bottom: 18px;
+    }
+
+    button {
+      padding: 12px 22px;
+      font-size: 16px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      margin: 6px;
+    }
+
+    .yes {
+      background: #ff4d6d;
+      color: white;
+    }
+
+    .no {
+      background: #eee;
+      color: #333;
+      position: absolute;
+    }
+
+    .heart {
+      position: absolute;
+      font-size: 20px;
+      animation: float 6s linear infinite;
+    }
+
+    @keyframes float {
+      from { transform: translateY(100vh); opacity: 1; }
+      to { transform: translateY(-10vh); opacity: 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Background music: They Call This Love -->
+  <iframe width="0" height="0"
+    src="https://www.youtube.com/embed/1V_xRb0x9aw?autoplay=1&loop=1&playlist=1V_xRb0x9aw"
+    frameborder="0"
+    allow="autoplay">
+  </iframe>
+
+  <div class="card">
+    <img src="us.jpg" alt="Us ❤️">
+
+    <div class="bengali">
+      “Ami tomake bhalobashi, Miss Ashapurna Das ❤️”
+    </div>
+
+    <h1>Hey Khushi ❤️</h1>
+
+    <p>
+      Somehow, without trying,<br>
+      you became my favorite part of every day 🌸
+    </p>
+
+    <h2>Will you be my Valentine? 🌹</h2>
+
+    <button class="yes" onclick="yesClicked()">Yes 💖</button>
+    <button class="no" onmouseover="moveButton(this)">Think again 😏</button>
+  </div>
+
+  <script>
+    function yesClicked() {
+      document.body.innerHTML = `
+        <div style="
+          display:flex;
+          flex-direction:column;
+          align-items:center;
+          justify-content:center;
+          height:100vh;
+          background:linear-gradient(135deg,#ff758c,#ff7eb3);
+          color:white;
+          text-align:center;
+          font-family:'Segoe UI',sans-serif;">
+          
+          <h1>Khushi 🥰💖</h1>
+          <p style="font-size:18px; max-width:320px;">
+            Ami tomake bhalobashi,<br>
+            Miss Ashapurna Das ❤️
+          </p>
+          <h2>— From Pooh 🧸</h2>
+        </div>
+      `;
+    }
+
+    function moveButton(btn) {
+      btn.style.left = Math.random() * 80 + "vw";
+      btn.style.top = Math.random() * 80 + "vh";
+    }
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+
+    setInterval(createHeart, 300);
+  </script>
+
+</body>
+</html>
